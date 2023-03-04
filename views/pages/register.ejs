@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+</head>
+
+<body style="width: 25%;margin: auto;">
+    <style>
+        body{
+            background-color: steelblue;
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        input, select, option {
+            line-height: 26px;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        input[type=submit]{
+            margin-top: 15px;
+            padding: 10px 15px;
+            color: steelblue;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a{
+            color: rgb(100, 232, 250);
+        }
+    </style>
+    <script>
+        function checkbox() {
+            let checkbox = document.getElementById("terms");
+            let submit = document.getElementById("submit");
+            if (checkbox.value == "true") {
+                checkbox.value = "false";
+                submit.disabled = true;
+            } else {
+                checkbox.value = "true";
+                submit.disabled = false;
+            }
+        }
+    </script>
+    <h1>Register</h1>
+    <form action="/register" method="POST" id="register-form">
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" id="email" required maxlength="255"
+            value="<%= data.email == undefined ?  '' : data.email %>"><br>
+        <label for="login">Login name:</label><br>
+        <input type="text" name="login" id="login" required maxlength="255"
+            value="<%= data.login == undefined ?  '' : data.login %>"><br>
+        <label for="name">Real name:</label><br>
+        <input type="text" name="name" id="name" required minlength="2" maxlength="255"
+            value="<%= data.name == undefined ?  '' : data.name %>"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" required minlength="6"><br>
+        <label for="date">Birth date:</label><br>
+        <input type="date" name="date" id="date" required value="<%= data.date == undefined ?  '' : data.date %>"><br>
+        <label for="country">Country: </label>
+        <select name="country" id="country" required value="<%= data.country == undefined ?  '' : data.country %>">
+            <% for (let i = 0; i < countries.length; i++) { %>
+            <option value='<%= countries[i] %>'><%= countries[i] %></option>
+            <% } %>
+        </select><br>
+        <label for="terms">Do you agree with terms and conditions:</label>
+        <input type="checkbox" onclick="checkbox()" id="terms" value="false"><br>
+        <input type="submit" value="Submit" id="submit" disabled>
+    </form>
+
+    <% if(errors != undefined){ %>
+        <h3 style="color:red">
+            <% for (let i = 0; i < errors.length; i++) { %> 
+                <%= errors[i] %> <br>
+            <% } %>
+        </h3>
+    <% } %>
+    
+    <h1><a href="./login">Login Here</a></h1>
+</body>
+
+</html>
