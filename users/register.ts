@@ -59,7 +59,7 @@ async function validateForm(data: any){
         if (data.name == '') {
             errors.push("Real name required")
         }
-        if (data.password.length <= 6) {
+        if (data.password.length < 6) {
             errors.push("Password must be at least 6 characters")
         }
         if (new Date(data.date).getTime() > new Date().getTime()) {
