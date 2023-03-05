@@ -1,0 +1,36 @@
+body{
+    background-color: steelblue;
+    color: rgb(255, 255, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#reg-form-cont, #login-form-cont{
+    width: 25%;
+    margin: auto;
+}
+input, select, option {
+    line-height: 26px;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+input[type=submit]{
+    margin-top: 15px;
+    padding: 10px 15px;
+    color: steelblue;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+a{
+    color: rgb(100, 232, 250);
+}
+@media only screen and (max-width: 1000px) {
+    #reg-form-cont, #login-form-cont{
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #reg-form-cont, #login-form-cont{
+        width: 90%;
+    }
+}

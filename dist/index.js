@@ -20,6 +20,7 @@ const cookieParser = require('cookie-parser');
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.set('view engine', 'ejs');
+app.use(express_1.default.static('public'));
 const registerRouter = require('./users/register');
 const loginRouter = require('./users/login');
 const logoutRouter = require('./users/logout');

@@ -10,6 +10,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 const registerRouter = require('./users/register')
 const loginRouter = require('./users/login')
