@@ -13,10 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const dotenv_1 = __importDefault(require("dotenv"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const queries_1 = require("./db/queries");
-dotenv_1.default.config();
 const app = (0, express_1.default)();
 const cookieParser = require('cookie-parser');
 app.use(express_1.default.urlencoded({ extended: false }));

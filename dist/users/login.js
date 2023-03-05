@@ -15,8 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const queries_1 = require("../db/queries");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
 const router = require('express').Router();
 router.get('/', (req, res) => {
     res.render('./pages/login', { error: '', email: undefined });

@@ -2,9 +2,6 @@ import { Request, Response, Router } from 'express';
 import { loginExists, getHash, getEmail } from '../db/queries';
 import bcrypt from "bcryptjs"
 import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const router: Router = require('express').Router();
 

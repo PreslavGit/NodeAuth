@@ -1,9 +1,7 @@
 import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import { getName } from './db/queries';
 
-dotenv.config();
 
 const app: Express = express();
 const cookieParser = require('cookie-parser');

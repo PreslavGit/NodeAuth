@@ -15,8 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const queries_1 = require("../db/queries");
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
 const router = require('express').Router();
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let countries = yield (0, queries_1.getCountries)();
